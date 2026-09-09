@@ -1,3 +1,4 @@
+```php
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -126,7 +127,7 @@
 
     <div class="form-container">
 
-        <form method="POST" action="/LavaLust/products/create">
+        <form method="POST" action="/products/create">
 
             <div class="form-group">
                 <label>Product Name</label>
@@ -172,8 +173,6 @@
                 <button type="submit" class="btn save-btn">
                     Save Product
                 </button>
-
-                
             </div>
 
         </form>
@@ -184,3 +183,4 @@
 
 </body>
 </html>
+```
