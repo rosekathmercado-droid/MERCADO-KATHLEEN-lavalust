@@ -52,7 +52,7 @@ class Auth extends Controller
         session_unset();
         session_destroy();
 
-        header('Location: http://localhost/LavaLust/login');
+        header('Location: /products');
         exit;
     }
 }

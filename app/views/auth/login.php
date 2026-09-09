@@ -104,7 +104,7 @@
             </div>
         <?php endif; ?>
 
-        <form method="POST" action="/LavaLust/login">
+        <form method="POST" action="/login">
 
             <div class="form-group">
                 <label>Username</label>
