@@ -1,3 +1,4 @@
+```php
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -132,13 +133,15 @@
     <div class="content">
 
         <div class="actions">
-            <a class="btn add-btn" href="/LavaLust/products/create">
+
+            <a class="btn add-btn" href="/products/create">
                 + Add Product
             </a>
 
-            <a class="btn logout-btn" href="/LavaLust/logout">
+            <a class="btn logout-btn" href="/logout">
                 Logout
             </a>
+
         </div>
 
         <table>
@@ -153,27 +156,40 @@
             </tr>
 
             <?php foreach ($products as $product): ?>
+
             <tr>
+
                 <td><?= $product['id'] ?></td>
+
                 <td><?= $product['product_name'] ?></td>
+
                 <td><?= $product['description'] ?></td>
-                <td class="price">₱<?= number_format($product['price'], 2) ?></td>
+
+                <td class="price">
+                    ₱<?= number_format($product['price'], 2) ?>
+                </td>
+
                 <td><?= $product['quantity'] ?></td>
+
                 <td><?= $product['created_at'] ?></td>
 
                 <td>
+
                     <a class="edit"
-                       href="/LavaLust/products/edit/<?= $product['id'] ?>">
+                       href="/products/edit/<?= $product['id'] ?>">
                         Edit
                     </a>
 
                     <a class="delete"
-                       href="/LavaLust/products/delete/<?= $product['id'] ?>"
+                       href="/products/delete/<?= $product['id'] ?>"
                        onclick="return confirm('Are you sure you want to delete this product?');">
                         Delete
                     </a>
+
                 </td>
+
             </tr>
+
             <?php endforeach; ?>
 
         </table>
@@ -184,3 +200,4 @@
 
 </body>
 </html>
+```
