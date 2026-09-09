@@ -84,4 +84,8 @@ define('PUBLIC_DIR', $public_folder);
  * ------------------------------------------------------
  */
 require_once SYSTEM_DIR . 'kernel/LavaLust.php';
+
+
 ?>
+<a href="/LavaLust/products/create">Add Product</a>
+<a href="/LavaLust/products">Back to Products</a>

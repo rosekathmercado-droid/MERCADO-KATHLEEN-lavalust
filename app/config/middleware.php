@@ -1,5 +1,6 @@
 <?php
 defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
+
 /**
  * ------------------------------------------------------------------
  * LavaLust - an opensource lightweight PHP MVC Framework
@@ -33,6 +34,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
  * @link https://github.com/ronmarasigan/LavaLust
  * @license https://opensource.org/licenses/MIT MIT License
  */
+
 /*
 |--------------------------------------------------------------------------
 | Adding of middlewares
@@ -42,4 +44,6 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 |
 */
 
-$config['middlewares'] = [];
+$config['middlewares'] = array(
+    'auth' => load_class('AuthMiddleware', 'middlewares')
+);
