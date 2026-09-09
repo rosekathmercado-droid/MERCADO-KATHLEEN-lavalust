@@ -32,7 +32,7 @@ class Product extends Controller
 
             $this->ProductsModel->insert($data);
 
-            header('Location: http://localhost/LavaLust/products');
+            header('Location: /products');
             exit;
         }
 
@@ -47,7 +47,7 @@ class Product extends Controller
         $product = $this->ProductsModel->find($id);
 
         if (!$product) {
-            header('Location: http://localhost/LavaLust/products');
+            header('Location: /products');
             exit;
         }
 
@@ -62,7 +62,7 @@ class Product extends Controller
 
             $this->ProductsModel->update($id, $data);
 
-            header('Location: http://localhost/LavaLust/products');
+            header('Location: /products');
             exit;
         }
 
@@ -78,7 +78,7 @@ class Product extends Controller
 
         $this->ProductsModel->delete($id);
 
-        header('Location: http://localhost/LavaLust/products');
+        header('Location: /products');
         exit;
     }
 }
