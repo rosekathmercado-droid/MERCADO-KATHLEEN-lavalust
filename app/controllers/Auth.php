@@ -25,7 +25,7 @@ class Auth extends Controller
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['username'] = $user['username'];
 
-                header('Location: http://localhost/LavaLust/products');
+                header('Location: /products');
                 exit;
 
             } else {
@@ -52,7 +52,7 @@ class Auth extends Controller
         session_unset();
         session_destroy();
 
-        header('Location: /products');
+        header('Location: /login');
         exit;
     }
 }
