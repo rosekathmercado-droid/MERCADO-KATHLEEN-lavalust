@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -127,7 +128,7 @@
     <div class="form-container">
 
         <form method="POST"
-              action="/LavaLust/products/edit/<?= $product['id'] ?>">
+              action="/products/edit/<?= $product['id'] ?>">
 
             <div class="form-group">
                 <label>Product Name</label>
@@ -169,11 +170,11 @@
             </div>
 
             <div class="buttons">
+
                 <button type="submit" class="btn update-btn">
                     Update Product
                 </button>
 
-                
             </div>
 
         </form>
@@ -184,3 +185,4 @@
 
 </body>
 </html>
+
