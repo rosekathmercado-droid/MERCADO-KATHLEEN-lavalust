@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -199,5 +199,5 @@
 </div>
 
 </body>
+</body>
 </html>
-
