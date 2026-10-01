@@ -35,4 +35,16 @@ $router->get('rollback-all', 'MigrationController::rollback_all');
 $router->get('refresh', 'MigrationController::refresh');
 
 $router->get('status', 'MigrationController::status');
+
+// ==============================
+// LAB 6 API ROUTES
+// ==============================
+
+$router->post('/api/login', 'ApiAuth::login');
+
+$router->get('/api/products', 'ApiProduct::index');
+$router->post('/api/products', 'ApiProduct::create');
+$router->put('/api/products/{id}', 'ApiProduct::update');
+$router->patch('/api/products/{id}', 'ApiProduct::update');
+$router->delete('/api/products/{id}', 'ApiProduct::delete');
 ?>

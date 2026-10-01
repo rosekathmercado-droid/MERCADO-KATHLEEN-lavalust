@@ -1,14 +1,44 @@
+
 <?php
+
 define('PREVENT_DIRECT_ACCESS', TRUE);
+
+/**
+ * ------------------------------------------------------------------
+ * CORS / Preflight Handling
+ * ------------------------------------------------------------------
+ */
+
+$origin = $_SERVER['HTTP_ORIGIN'] ?? '';
+
+$allowed_origins = [
+    'http://localhost:5173',
+    'http://127.0.0.1:5173'
+];
+
+if (in_array($origin, $allowed_origins, true)) {
+    header("Access-Control-Allow-Origin: {$origin}");
+    header('Access-Control-Allow-Credentials: true');
+}
+
+header('Access-Control-Allow-Headers: Authorization, Content-Type, X-Requested-With, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset');
+header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, PATCH, OPTIONS');
+header('Access-Control-Max-Age: 3600');
+
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(204);
+    exit;
+}
+
 /**
  * ------------------------------------------------------------------
  * LavaLust - an opensource lightweight PHP MVC Framework
  * ------------------------------------------------------------------
  *
  * MIT License
- * 
+ *
  * Copyright (c) 2020 Ronald M. Marasigan
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
@@ -29,7 +59,7 @@ define('PREVENT_DIRECT_ACCESS', TRUE);
  *
  * @package LavaLust
  * @author Ronald M. Marasigan <ronald.marasigan@yahoo.com>
- * @copyright Copyright 2020 (https://ronmarasigan.github.io)
+ * @copyright Copyright 2020
  * @since Version 1
  * @link https://lavalust.pinoywap.org
  * @license https://opensource.org/licenses/MIT MIT License
@@ -42,10 +72,11 @@ define('PREVENT_DIRECT_ACCESS', TRUE);
  *
  * This variable must contain the name of your "scheme" directory.
  * Set the path if it is not in the same directory as this file.
- * 
+ *
  * NO TRAILING SLASH!
  */
-	$system_path 			= 'scheme';
+
+$system_path = 'scheme';
 
 /*
  *---------------------------------------------------------------
@@ -57,23 +88,27 @@ define('PREVENT_DIRECT_ACCESS', TRUE);
  *
  * NO TRAILING SLASH!
  */
-	$application_folder 	= 'app';
+
+$application_folder = 'app';
 
 /*
  *---------------------------------------------------------------
- * APPLICATION DIRECTORY NAME
+ * PUBLIC DIRECTORY NAME
  *---------------------------------------------------------------
- * This let you set up your public folder where css, js and other public,
- * files will be visible
+ *
+ * This lets you set the path where CSS, JS and other public
+ * files will be visible.
  */
-	$public_folder			= 'public';
+
+$public_folder = 'public';
 
 /*
  * ------------------------------------------------------
  * Define Application Constants
  * ------------------------------------------------------
  */
-define('ROOT_DIR',  dirname(__DIR__) . DIRECTORY_SEPARATOR);
+
+define('ROOT_DIR', dirname(__DIR__) . DIRECTORY_SEPARATOR);
 define('SYSTEM_DIR', ROOT_DIR . $system_path . DIRECTORY_SEPARATOR);
 define('APP_DIR', ROOT_DIR . $application_folder . DIRECTORY_SEPARATOR);
 define('PUBLIC_DIR', $public_folder);
@@ -83,7 +118,8 @@ define('PUBLIC_DIR', $public_folder);
  * Setup done? Then Hurray!
  * ------------------------------------------------------
  */
+
 require_once SYSTEM_DIR . 'kernel/LavaLust.php';
 
-
 ?>
+
