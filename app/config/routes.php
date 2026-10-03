@@ -23,7 +23,13 @@ $router->post('/products/edit/{id}', 'Product::edit')->middleware('auth');
 
 $router->get('/products/delete/{id}', 'Product::delete')->middleware('auth');
 
-// Migration Routes
+
+/*
+|--------------------------------------------------------------------------
+| Migration Routes
+|--------------------------------------------------------------------------
+*/
+
 $router->get('create-migration/{migration_class}', 'MigrationController::create_migration');
 
 $router->get('migrate', 'MigrationController::migrate');
@@ -36,9 +42,14 @@ $router->get('refresh', 'MigrationController::refresh');
 
 $router->get('status', 'MigrationController::status');
 
-// ==============================
-// LAB 6 API ROUTES
-// ==============================
+
+/*
+|--------------------------------------------------------------------------
+| LAB 6 API ROUTES
+|--------------------------------------------------------------------------
+*/
+
+$router->get('/api', 'ApiProduct::api_status');
 
 $router->post('/api/login', 'ApiAuth::login');
 
@@ -47,4 +58,5 @@ $router->post('/api/products', 'ApiProduct::create');
 $router->put('/api/products/{id}', 'ApiProduct::update');
 $router->patch('/api/products/{id}', 'ApiProduct::update');
 $router->delete('/api/products/{id}', 'ApiProduct::delete');
+
 ?>

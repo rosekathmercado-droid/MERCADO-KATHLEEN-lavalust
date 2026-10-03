@@ -13,10 +13,16 @@ class ApiProduct extends Controller
         $this->call->library('api');
     }
 
-    /**
-     * GET /api/products
-     * Get all products
-     */
+    public function api_status()
+    {
+        $this->api->require_method('GET');
+
+        $this->api->respond([
+            'message' => 'LavaLust API is running successfully.',
+            'status' => 'online'
+        ], 200);
+    }
+
     public function index()
     {
         $this->api->require_method('GET');
@@ -30,10 +36,6 @@ class ApiProduct extends Controller
         ], 200);
     }
 
-    /**
-     * POST /api/products
-     * Create a new product
-     */
     public function create()
     {
         $this->api->require_method('POST');
@@ -73,12 +75,10 @@ class ApiProduct extends Controller
         ], 201);
     }
 
-    /**
-     * PUT/PATCH /api/products/{id}
-     * Update an existing product
-     */
     public function update($id)
     {
+        $this->api->require_method('PUT');
+
         $this->api->require_jwt();
 
         $product = $this->ProductsModel->find($id);
@@ -130,10 +130,6 @@ class ApiProduct extends Controller
         ], 200);
     }
 
-    /**
-     * DELETE /api/products/{id}
-     * Delete a product
-     */
     public function delete($id)
     {
         $this->api->require_method('DELETE');
@@ -155,5 +151,4 @@ class ApiProduct extends Controller
         ], 200);
     }
 }
-
 ?>
