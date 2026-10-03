@@ -221,11 +221,12 @@ class Api
         /*
          * Allowed origins for local React development.
          */
-        $allowed_origins = [
-            'http://localhost:5173',
-            'http://127.0.0.1:5173',
-            'https://lab6-react-kathleen.onrender.com'
-        ];
+       $allowed_origins = [
+    'http://localhost:5173',
+    'http://127.0.0.1:5173',
+    'https://lab6-react-kathleen.onrender.com',
+    'https://api-tester.marasigan.dev'
+];
 
         /*
          * Allow React frontend origin.
