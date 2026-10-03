@@ -1,16 +1,29 @@
 <?php
+
 defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
+
 ?>
+
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to LavaLust</title>
+
+    <title>LavaLust Framework</title>
+
     <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700;800&family=Unbounded:wght@400;500&display=swap" rel="stylesheet">
+
     <style>
+
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
@@ -41,6 +54,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
         }
 
         /* ── NOISE TEXTURE ── */
+
         body::before {
             content: '';
             position: fixed;
@@ -52,6 +66,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
         }
 
         /* ── GRID BACKGROUND ── */
+
         body::after {
             content: '';
             position: fixed;
@@ -66,6 +81,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
         }
 
         /* ── GLOW ORBS ── */
+
         .orb {
             position: fixed;
             border-radius: 50%;
@@ -73,18 +89,25 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
             pointer-events: none;
             z-index: 0;
         }
+
         .orb-1 {
-            width: 600px; height: 600px;
-            top: -200px; left: -100px;
+            width: 600px;
+            height: 600px;
+            top: -200px;
+            left: -100px;
             background: radial-gradient(circle, rgba(221,72,20,0.12) 0%, transparent 70%);
         }
+
         .orb-2 {
-            width: 400px; height: 400px;
-            top: 200px; right: -100px;
+            width: 400px;
+            height: 400px;
+            top: 200px;
+            right: -100px;
             background: radial-gradient(circle, rgba(221,72,20,0.07) 0%, transparent 70%);
         }
 
         /* ── LAYOUT ── */
+
         .wrap {
             position: relative;
             z-index: 1;
@@ -94,6 +117,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
         }
 
         /* ── NAV ── */
+
         nav {
             position: relative;
             z-index: 10;
@@ -119,7 +143,8 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
         }
 
         .nav-logo .flame {
-            width: 28px; height: 28px;
+            width: 28px;
+            height: 28px;
             background: var(--lava);
             border-radius: 6px;
             display: flex;
@@ -145,7 +170,10 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
             transition: color 0.2s, background 0.2s;
         }
 
-        .nav-links a:hover { color: var(--text); background: var(--bg3); }
+        .nav-links a:hover {
+            color: var(--text);
+            background: var(--bg3);
+        }
 
         .nav-links .btn-nav {
             color: var(--text);
@@ -162,6 +190,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
         }
 
         /* ── HERO ── */
+
         .hero {
             padding: 7rem 2rem 5rem;
             text-align: center;
@@ -188,7 +217,8 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 
         .badge::before {
             content: '';
-            width: 6px; height: 6px;
+            width: 6px;
+            height: 6px;
             background: var(--lava);
             border-radius: 50%;
             box-shadow: 0 0 8px var(--lava);
@@ -196,8 +226,15 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
         }
 
         @keyframes pulse {
-            0%, 100% { opacity: 1; box-shadow: 0 0 8px var(--lava); }
-            50% { opacity: 0.5; box-shadow: 0 0 3px var(--lava); }
+            0%, 100% {
+                opacity: 1;
+                box-shadow: 0 0 8px var(--lava);
+            }
+
+            50% {
+                opacity: 0.5;
+                box-shadow: 0 0 3px var(--lava);
+            }
         }
 
         .hero h1 {
@@ -208,7 +245,10 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
             margin-bottom: 1.5rem;
         }
 
-        .hero h1 .word-lava { color: var(--lava); }
+        .hero h1 .word-lava {
+            color: var(--lava);
+        }
+
         .hero h1 .word-lust {
             color: transparent;
             -webkit-text-stroke: 1.5px rgba(255,255,255,0.3);
@@ -271,6 +311,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
         }
 
         /* ── STAT BAR ── */
+
         .stats {
             display: flex;
             justify-content: center;
@@ -283,7 +324,9 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
             z-index: 1;
         }
 
-        .stat { text-align: center; }
+        .stat {
+            text-align: center;
+        }
 
         .stat-value {
             font-size: 2rem;
@@ -293,7 +336,9 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
             line-height: 1;
         }
 
-        .stat-value span { color: var(--lava); }
+        .stat-value span {
+            color: var(--lava);
+        }
 
         .stat-label {
             font-size: 0.78rem;
@@ -305,6 +350,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
         }
 
         /* ── SECTION ── */
+
         section {
             padding: 5rem 2rem;
             position: relative;
@@ -337,6 +383,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
         }
 
         /* ── FEATURES GRID ── */
+
         .features-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -355,22 +402,29 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
             position: relative;
         }
 
-        .feature:hover { background: var(--bg2); }
+        .feature:hover {
+            background: var(--bg2);
+        }
 
         .feature::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0;
+            top: 0;
+            left: 0;
+            right: 0;
             height: 1px;
             background: linear-gradient(90deg, transparent, var(--lava-glow-strong), transparent);
             opacity: 0;
             transition: opacity 0.3s;
         }
 
-        .feature:hover::before { opacity: 1; }
+        .feature:hover::before {
+            opacity: 1;
+        }
 
         .feature-icon {
-            width: 40px; height: 40px;
+            width: 40px;
+            height: 40px;
             background: rgba(221,72,20,0.1);
             border: 1px solid var(--border-hot);
             border-radius: 10px;
@@ -395,6 +449,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
         }
 
         /* ── CODE SECTION ── */
+
         .code-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -418,10 +473,23 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
             background: var(--bg3);
         }
 
-        .dot { width: 10px; height: 10px; border-radius: 50%; }
-        .dot-r { background: #ff5f57; }
-        .dot-y { background: #febc2e; }
-        .dot-g { background: #28c840; }
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .dot-r {
+            background: #ff5f57;
+        }
+
+        .dot-y {
+            background: #febc2e;
+        }
+
+        .dot-g {
+            background: #28c840;
+        }
 
         .code-filename {
             font-family: var(--mono);
@@ -439,14 +507,32 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
             overflow-x: auto;
         }
 
-        .code-body .kw { color: #f97316; }
-        .code-body .fn { color: #60a5fa; }
-        .code-body .str { color: #86efac; }
-        .code-body .cm { color: #3f3f46; }
-        .code-body .cl { color: #fde68a; }
-        .code-body .var { color: #c4b5fd; }
+        .code-body .kw {
+            color: #f97316;
+        }
+
+        .code-body .fn {
+            color: #60a5fa;
+        }
+
+        .code-body .str {
+            color: #86efac;
+        }
+
+        .code-body .cm {
+            color: #3f3f46;
+        }
+
+        .code-body .cl {
+            color: #fde68a;
+        }
+
+        .code-body .var {
+            color: #c4b5fd;
+        }
 
         /* ── STRUCTURE ── */
+
         .structure-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -474,9 +560,13 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
             background: rgba(221,72,20,0.05);
         }
 
-        .dir-item .dir-icon { color: var(--lava); font-size: 0.9rem; }
+        .dir-item .dir-icon {
+            color: var(--lava);
+            font-size: 0.9rem;
+        }
 
         /* ── FOOTER ── */
+
         footer {
             border-top: 1px solid var(--border);
             padding: 2rem;
@@ -503,7 +593,9 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
             flex-wrap: wrap;
         }
 
-        .footer-meta span { color: var(--text-muted); }
+        .footer-meta span {
+            color: var(--text-muted);
+        }
 
         .footer-links {
             display: flex;
@@ -517,9 +609,12 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
             transition: color 0.2s;
         }
 
-        .footer-links a:hover { color: var(--lava); }
+        .footer-links a:hover {
+            color: var(--lava);
+        }
 
         /* ── DIVIDER ── */
+
         .divider {
             height: 1px;
             background: linear-gradient(90deg, transparent, var(--border), transparent);
@@ -529,190 +624,385 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
         }
 
         /* ── ANIMATIONS ── */
+
         @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(24px); }
-            to   { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .hero > * {
             animation: fadeUp 0.6s ease both;
         }
 
-        .hero .badge         { animation-delay: 0.05s; }
-        .hero h1             { animation-delay: 0.15s; }
-        .hero .hero-sub      { animation-delay: 0.25s; }
-        .hero .hero-actions  { animation-delay: 0.35s; }
+        .hero .badge {
+            animation-delay: 0.05s;
+        }
+
+        .hero h1 {
+            animation-delay: 0.15s;
+        }
+
+        .hero .hero-sub {
+            animation-delay: 0.25s;
+        }
+
+        .hero .hero-actions {
+            animation-delay: 0.35s;
+        }
 
         @media (max-width: 768px) {
-            .features-layout { grid-template-columns: 1fr; }
-            .code-section { grid-template-columns: 1fr; }
-            nav { padding: 1rem 1.5rem; }
-            .nav-links a:not(.btn-nav) { display: none; }
-            section { padding: 3rem 1.5rem; }
+
+            .features-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .code-section {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .nav-links a:not(.btn-nav) {
+                display: none;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
         }
+
     </style>
+
 </head>
+
 <body>
 
 <div class="orb orb-1"></div>
 <div class="orb orb-2"></div>
 
 <!-- NAV -->
+
 <nav>
+
     <a class="nav-logo" href="#">
+
         <div class="flame">🔥</div>
+
         LavaLust
+
     </a>
+
     <div class="nav-links">
+
         <a href="https://lavalust.netlify.app/docs/" target="_blank">Docs</a>
+
         <a href="https://github.com/ronmarasigan/LavaLust" target="_blank">GitHub</a>
+
         <a href="https://lavalust.netlify.app/docs/" target="_blank" class="btn-nav">Get Started →</a>
+
     </div>
+
 </nav>
 
 <!-- HERO -->
+
 <div class="hero wrap">
-    <div class="badge">v<?php echo config_item('VERSION') ?? '4.x'; ?> — Now Available</div>
+
+    <div class="badge">LavaLust Framework</div>
+
     <h1>
-        <span class="word-lava">k po><span class="word-lust">po</span><br>Done na ako.
+
+        <span class="word-lava">Lava</span><span class="word-lust">Lust</span>
+        <br>Framework
+
     </h1>
+
     <p class="hero-sub">
+
         A lightweight, expressive PHP MVC framework built for developers who want structure without the bloat.
+
     </p>
+
     <div class="hero-actions">
+
         <a href="https://lavalust.netlify.app/docs/" target="_blank" class="btn btn-primary">
+
             Read the Docs
+
         </a>
+
         <a href="https://github.com/ronmarasigan/LavaLust" target="_blank" class="btn btn-ghost">
+
             View on GitHub
+
         </a>
+
     </div>
+
 </div>
 
 <!-- STATS -->
+
 <div class="stats">
+
     <div class="stat">
+
         <div class="stat-value">MVC<span>+</span></div>
+
         <div class="stat-label">Architecture</div>
+
     </div>
+
     <div class="stat">
+
         <div class="stat-value"><span>4</span> DB</div>
+
         <div class="stat-label">Drivers</div>
+
     </div>
+
     <div class="stat">
+
         <div class="stat-value">HMVC<span>✓</span></div>
+
         <div class="stat-label">Module Support</div>
+
     </div>
+
     <div class="stat">
+
         <div class="stat-value">REST<span>*</span></div>
+
         <div class="stat-label">API Ready</div>
+
     </div>
+
 </div>
 
 <div class="divider"></div>
 
 <!-- FEATURES -->
+
 <section>
+
     <div class="wrap">
+
         <div class="section-label">// features</div>
-        <h2 class="section-title">Everything you need.<br>Nothing you don't.</h2>
-        <p class="section-desc">LavaLust gives you a clean, consistent structure so you can focus on building — not configuring.</p>
+
+        <h2 class="section-title">
+            Everything you need.<br>
+            Nothing you don't.
+        </h2>
+
+        <p class="section-desc">
+            LavaLust gives you a clean, consistent structure so you can focus on building — not configuring.
+        </p>
 
         <div class="features-layout">
+
             <div class="feature">
+
                 <div class="feature-icon">🧠</div>
+
                 <h3>MVC Architecture</h3>
-                <p>Clean separation between Models, Views, and Controllers keeps your codebase maintainable as it grows.</p>
+
+                <p>
+                    Clean separation between Models, Views, and Controllers keeps your codebase maintainable as it grows.
+                </p>
+
             </div>
+
             <div class="feature">
+
                 <div class="feature-icon">⚙️</div>
+
                 <h3>Flexible Routing</h3>
-                <p>Define routes with GET, POST, PUT, DELETE and more. Supports named routes, closures, and grouped prefixes.</p>
+
+                <p>
+                    Define routes with GET, POST, PUT, DELETE and more. Supports named routes, closures, and grouped prefixes.
+                </p>
+
             </div>
+
             <div class="feature">
+
                 <div class="feature-icon">🗄️</div>
+
                 <h3>ORM-style Models</h3>
-                <p>Fluent query builder with relationships, soft deletes, timestamps, mass assignment protection, and eager loading.</p>
+
+                <p>
+                    Fluent query builder with relationships, soft deletes, timestamps, mass assignment protection, and eager loading.
+                </p>
+
             </div>
+
             <div class="feature">
+
                 <div class="feature-icon">📦</div>
+
                 <h3>HMVC Modules</h3>
-                <p>Scale your app with self-contained modules. Each module owns its controllers, models, and views.</p>
+
+                <p>
+                    Scale your app with self-contained modules. Each module owns its controllers, models, and views.
+                </p>
+
             </div>
+
             <div class="feature">
+
                 <div class="feature-icon">🔗</div>
+
                 <h3>REST API Support</h3>
-                <p>Build JSON APIs out of the box using built-in conventions, response helpers, and content negotiation.</p>
+
+                <p>
+                    Build JSON APIs out of the box using built-in conventions, response helpers, and content negotiation.
+                </p>
+
             </div>
+
             <div class="feature">
+
                 <div class="feature-icon">🛡️</div>
+
                 <h3>Libraries & Helpers</h3>
-                <p>Sessions, form validation, file uploads, pagination, encryption — batteries included where it counts.</p>
+
+                <p>
+                    Sessions, form validation, file uploads, pagination, encryption — batteries included where it counts.
+                </p>
+
             </div>
+
         </div>
+
     </div>
+
 </section>
 
 <div class="divider"></div>
 
 <!-- CODE EXAMPLE -->
+
 <section>
+
     <div class="wrap">
+
         <div class="code-section">
+
             <div>
+
                 <div class="section-label">// quick start</div>
-                <h2 class="section-title">Up and running in minutes.</h2>
-                <p class="section-desc">Define a route, write a controller method, render a view. That's the whole loop.</p>
+
+                <h2 class="section-title">
+                    Up and running in minutes.
+                </h2>
+
+                <p class="section-desc">
+                    Define a route, write a controller method, render a view. That's the whole loop.
+                </p>
+
             </div>
 
             <div>
+
                 <div class="code-block" style="margin-bottom:1rem;">
+
                     <div class="code-header">
+
                         <div class="dot dot-r"></div>
                         <div class="dot dot-y"></div>
                         <div class="dot dot-g"></div>
-                        <span class="code-filename">app/config/routes.php</span>
+
+                        <span class="code-filename">
+                            app/config/routes.php
+                        </span>
+
                     </div>
+
                     <div class="code-body">
+
 <span class="var">$router</span>-><span class="fn">get</span>(<span class="str">'/'</span>, <span class="str">'Welcome::index'</span>);<br>
+
 <span class="var">$router</span>-><span class="fn">get</span>(<span class="str">'/users'</span>, <span class="str">'Users::index'</span>);<br>
+
 <span class="var">$router</span>-><span class="fn">post</span>(<span class="str">'/users/store'</span>, <span class="str">'Users::store'</span>);
+
                     </div>
+
                 </div>
 
                 <div class="code-block">
+
                     <div class="code-header">
+
                         <div class="dot dot-r"></div>
                         <div class="dot dot-y"></div>
                         <div class="dot dot-g"></div>
-                        <span class="code-filename">app/controllers/Welcome.php</span>
+
+                        <span class="code-filename">
+                            app/controllers/Welcome.php
+                        </span>
+
                     </div>
+
                     <div class="code-body">
+
 <span class="kw">class</span> <span class="cl">Welcome</span> <span class="kw">extends</span> <span class="cl">Controller</span> {<br>
+
 &nbsp;&nbsp;<span class="kw">public function</span> <span class="fn">index</span>() {<br>
+
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="var">$this</span>-><span class="fn">call</span>-><span class="fn">model</span>(<span class="str">'UserModel'</span>);<br>
+
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="var">$data</span>[<span class="str">'users'</span>] = <span class="var">$this</span>-><span class="cl">UserModel</span>-><span class="fn">all</span>();<br>
+
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="var">$this</span>-><span class="fn">call</span>-><span class="fn">view</span>(<span class="str">'welcome'</span>, <span class="var">$data</span>);<br>
+
 &nbsp;&nbsp;}<br>
+
 }
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
     </div>
+
 </section>
 
 <div class="divider"></div>
 
 <!-- STRUCTURE -->
+
 <section>
+
     <div class="wrap">
+
         <div class="section-label">// project structure</div>
-        <h2 class="section-title">Organized by default.</h2>
-        <p class="section-desc">A predictable directory layout so every file has a logical home from day one.</p>
+
+        <h2 class="section-title">
+            Organized by default.
+        </h2>
+
+        <p class="section-desc">
+            A predictable directory layout so every file has a logical home from day one.
+        </p>
 
         <div class="structure-grid">
+
             <?php
+
             $dirs = [
                 ['app/config',      '⚙'],
                 ['app/controllers', '🎮'],
@@ -729,34 +1019,84 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
                 ['console/',        '💻'],
                 ['scheme/',         '📐'],
             ];
+
             foreach ($dirs as [$name, $icon]): ?>
+
             <div class="dir-item">
+
                 <span class="dir-icon"><?php echo $icon; ?></span>
+
                 <?php echo $name; ?>
+
             </div>
+
             <?php endforeach; ?>
+
         </div>
+
     </div>
+
 </section>
 
 <!-- FOOTER -->
+
 <footer>
+
     <div class="footer-inner">
+
         <div class="footer-meta">
-            <span>rendered in <span><?php echo lava_instance()->performance->elapsed_time('lavalust'); ?>s</span></span>
-            <span>memory <span><?php echo lava_instance()->performance->memory_usage(); ?></span></span>
+
+            <span>
+                rendered in
+                <span>
+                    <?php echo lava_instance()->performance->elapsed_time('lavalust'); ?>s
+                </span>
+            </span>
+
+            <span>
+                memory
+                <span>
+                    <?php echo lava_instance()->performance->memory_usage(); ?>
+                </span>
+            </span>
+
             <?php if(config_item('environment') === 'development'): ?>
-            <span>version <span><?php echo config_item('version'); ?></span></span>
-            <span style="color: #dd4814;">● development</span>
+
+            <span>
+                version
+                <span>
+                    <?php echo config_item('version'); ?>
+                </span>
+            </span>
+
+            <span style="color: #dd4814;">
+                ● development
+            </span>
+
             <?php endif; ?>
+
         </div>
+
         <div class="footer-links">
-            <a href="https://github.com/ronmarasigan/LavaLust" target="_blank">GitHub</a>
-            <a href="https://lavalust.netlify.app/docs/" target="_blank">Docs</a>
-            <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a>
+
+            <a href="https://github.com/ronmarasigan/LavaLust" target="_blank">
+                GitHub
+            </a>
+
+            <a href="https://lavalust.netlify.app/docs/" target="_blank">
+                Docs
+            </a>
+
+            <a href="https://opensource.org/licenses/MIT" target="_blank">
+                MIT License
+            </a>
+
         </div>
+
     </div>
+
 </footer>
 
 </body>
+
 </html>
